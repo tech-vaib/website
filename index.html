@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVaib - Technology Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" defer></script>
+    <style>
+        .logo-container {
+            width: 150px;
+            height: auto;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+        }
+
+        /* Header and Footer Blue Color */
+        .blue-bg {
+            background-color:  #556B2F;
+        }
+
+        .blue-text {
+            color: #696969;
+        }
+
+        .footer-bg {
+            background-color: #003366;
+        }
+    </style>
+</head>
+
+<body class="bg-blue-50">
+
+    <!-- Navigation -->
+    <nav class="blue-bg shadow-lg" x-data="{ isOpen: false }">
+        <div class="max-w-8xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img src="company_logo.png" alt="Techvaib Logo" class="logo-container">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="text-white hover:text-teal-200">
+                            What We Do
+                            <svg class="inline w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <!-- Dropdown -->
+                        <div x-show="open" @click.away="open = false" class="absolute z-50 mt-2 w-48 bg-white rounded-md shadow-lg">
+                            <div class="py-1">
+                                <a href="#ai-ml-development" class="block px-4 py-2 text-gray-700 hover:bg-teal-50">Applications</a>
+                                <a href="#consulting-services" class="block px-4 py-2 text-gray-700 hover:bg-teal-50">Consulting Services</a>
+                                <a href="#cloud-solutions" class="block px-4 py-2 text-gray-700 hover:bg-teal-50">Cloud Solutions</a>
+                                <a href="#ai-agent" class="block px-4 py-2 text-gray-700 hover:bg-teal-50">AI Agents & Engineering</a>
+                                <a href="#devops-sre" class="block px-4 py-2 text-gray-700 hover:bg-teal-50">Sustainability</a>
+                                <a href="#startup-setup" class="block px-4 py-2 text-gray-700 hover:bg-teal-50">Startup Setup</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#about-us" class="text-white hover:text-teal-200">About Us</a>
+                    <a href="#careers" class="text-white hover:text-teal-200">Careers</a>
+                    <a href="mailto:contact@techvaib.com" class="text-white hover:text-teal-200">Contact Us</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="isOpen = !isOpen" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16m-16 6h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="isOpen" class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#ai-ml-development" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">Applications</a>
+                    <a href="#consulting-services" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">Consulting Services</a>
+                    <a href="#cloud-solutions" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">Cloud Solutions</a>
+                    <a href="#ai-agent" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">AI Agents & Engineering</a>
+                    <a href="#devops-sre" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">DevOps/SRE</a>
+                    <a href="#startup-setup" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">Startup Setup</a>
+                    <a href="#about-us" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">About Us</a>
+                    <a href="#careers" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">Careers</a>
+                    <a href="mailto:contact@techvaib.com" class="block px-3 py-2 text-gray-700 hover:bg-teal-50 rounded-md">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-teal-200 py-19">
+        <div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-6">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl text-blue-400 font-extrabold tracking-tight">
+                Transforming Business Through Technology
+            </h1>
+            <p class="mt-6 text-xl text-teal-100">
+                Delivering innovative solutions across industries with cutting-edge technology and expertise.
+            </p>
+        </div>
+    </div>
+
+    <!-- Our Services Section -->
+    <div id="services" class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900">Our Services</h2>
+            <p class="mt-4 text-lg text-gray-600">Comprehensive solutions for your business needs</p>
+        </div>
+        <div class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <!-- AI/ML Development -->
+            <div id="ai-ml-development" class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl" x-data="{ open: false }">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 cursor-pointer" @click="open = !open">
+                    Applications
+                </h3>
+                <p class="text-gray-600" x-show="!open">Building intelligent systems with machine learning and AI technologies.</p>
+                <p class="text-gray-600" x-show="open">We specialize in AI-driven solutions that help automate processes, improve decision-making, and optimize business outcomes. Our ML models are designed to scale as your business grows, with ongoing monitoring and improvements.</p>
+            </div>
+
+            <!-- Consulting -->
+            <div id="consulting-services" class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl" x-data="{ open: false }">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 cursor-pointer" @click="open = !open">
+                    Consulting Services
+                </h3>
+                <p class="text-gray-600" x-show="!open">Strategic technology consulting to drive digital transformation.</p>
+                <p class="text-gray-600" x-show="open">Our expert consultants provide tailored solutions, guiding you through technology adoption, IT strategy, and digital transformation to enhance business growth and operational efficiency.</p>
+            </div>
+
+            <!-- Cloud Solutions -->
+            <div id="cloud-solutions" class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl" x-data="{ open: false }">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 cursor-pointer" @click="open = !open">
+                    Cloud Solutions
+                </h3>
+                <p class="text-gray-600" x-show="!open">Cloud migration, management, and optimization services.</p>
+                <p class="text-gray-600" x-show="open">We help businesses move to the cloud with seamless migrations, ensuring scalability, flexibility, and cost-effectiveness. Our cloud solutions also improve performance and enhance security protocols.</p>
+            </div>
+
+            <!-- AI Agent Development -->
+            <div id="ai-agent" class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl" x-data="{ open: false }">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 cursor-pointer" @click="open = !open">
+                    AI Agent & Engineering
+                </h3>
+                <p class="text-gray-600" x-show="!open">AI agents to automate tasks, enhance customer service, and improve workflows.</p>
+                <p class="text-gray-600" x-show="open">Our AI agents can autonomously perform tasks, engage with customers, and provide assistance, improving efficiency and reducing operational costs. From chatbots to virtual assistants, we offer solutions tailored to your needs.</p>
+            </div>
+
+            <!-- DevOps/SRE -->
+            <div id="devops-sre" class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl" x-data="{ open: false }">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 cursor-pointer" @click="open = !open">
+                    DevOps & Site Reliability Engineering
+                </h3>
+                <p class="text-gray-600" x-show="!open">Optimizing infrastructure, monitoring systems, and ensuring operational efficiency.</p>
+                <p class="text-gray-600" x-show="open">Our DevOps and SRE services ensure that your infrastructure is scalable, automated, and reliable. From CI/CD pipelines to monitoring, we ensure optimal performance and minimal downtime for your business applications.</p>
+            </div>
+
+            <!-- Startup Setup Services -->
+            <div id="startup-setup" class="service-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl" x-data="{ open: false }">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 cursor-pointer" @click="open = !open">
+                    Startup Setup Services
+                </h3>
+                <p class="text-gray-600" x-show="!open">Helping startups build and scale their tech infrastructure from scratch.</p>
+                <p class="text-gray-600" x-show="open">We assist startups in setting up their technology stack, cloud infrastructure, product development, and operational processes. Whether you need help with software architecture, platform scalability, or fundraising, we're here to guide you.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bg text-white">
+        <div class="max-w-5xl mx-auto py-8 px-4 sm:px-5 lg:px-8">
+            <div class="flex justify-between items-center mb-8">
+                <!-- Contact Us Section -->
+                <div class="contact-info">
+                    <h3 class="text-xl font-semibold">Contact Us</h3>
+                    <p class="mt-2">Email: <a href="mailto:contact@techvaib.com" class="text-blue-200 hover:text-blue-200">contact@techvaib.com</a></p>
+                </div>
+                <div class="text-center mt-5">
+                    <p>&copy; 2025 TechVaib. All rights reserved.</p>
+                </div>
+                <!-- Connect with Us Section -->
+                <div class="social-links text-right">
+                    <h3 class="text-xl font-semibold">Connect with Us</h3>
+                    <div class="mt-1">
+                        <a href="https://www.facebook.com/TechVaib" target="_blank" class="mr-4 text-blue-200 hover:text-blue-200">Facebook</a>
+                        <a href="https://www.linkedin.com/company/TechVaib" target="_blank" class="mr-4 text-blue-200 hover:text-blue-200">LinkedIn</a>
+                        <a href="https://www.twitter.com/TechVaib" target="_blank" class="mr-4 text-blue-200 hover:text-blue-200">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
